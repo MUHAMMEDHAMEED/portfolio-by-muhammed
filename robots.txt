@@ -1,0 +1,6 @@
+# Robots.txt for Muhammad's Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://muhammedhameed.github.io/portfolio-by-muhammed/sitemap.xml
