@@ -1,142 +1,626 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio </title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad | Full Stack Web Developer & UI Designer</title>
+  <meta name="description" content="Portfolio of Muhammad - Full Stack Developer specializing in MERN stack, modern web applications, and interactive digital experiences.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Custom Glow Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-    <header class="header">
-        <a href="#" class="logo">muhammad</a>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="hamburger">&#9776;</label>
-        <nav class="nav-menu">
-            <a href="#hero">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <!-- Background Interactive Canvas -->
+  <canvas id="bgCanvas"></canvas>
 
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">I'm a Web Developer</h1>
-            <p class="hero-subtitle">I building websites & webapps.</p>
-            <a href="#projects" class="cta-button">My Work</a>
+  <!-- Ambient Glow Orbs -->
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+  <div class="ambient-orb orb-3"></div>
+
+  <!-- Header Navigation -->
+  <header class="header" id="header">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <span class="logo-symbol">&lt;/&gt;</span>
+        <span class="logo-text">muhammad<span class="dot">.</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="https://github.com/MUHAMMEDHAMEED" target="_blank" rel="noopener noreferrer" class="nav-btn-mobile">
+          <i class="fab fa-github"></i> GitHub Profile
+        </a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/MUHAMMEDHAMEED" target="_blank" rel="noopener noreferrer" class="btn btn-outline nav-github-btn">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+        </a>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-badge">
+          <span class="pulse-indicator"></span>
+          <span>Available for New Projects & Freelance</span>
         </div>
+
+        <h1 class="hero-title">
+          Crafting <span class="gradient-text-animated">Exceptional</span><br>
+          Digital Experiences
+        </h1>
+
+        <div class="hero-tagline-wrapper">
+          <span class="tagline-prefix">Specialized in</span>
+          <span class="tagline-dynamic" id="taglineDynamic"></span>
+          <span class="tagline-cursor">|</span>
+        </div>
+
+        <p class="hero-description">
+          I am a passionate Full Stack Developer who transforms ideas into high-performance, responsive web applications with polished UI/UX, robust architecture, and seamless scroll experiences.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-primary">
+            <span>Explore Projects</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <span>Let's Connect</span>
+            <i class="far fa-paper-plane"></i>
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <span class="social-label">Follow & Connect:</span>
+          <div class="social-icons">
+            <a href="https://github.com/MUHAMMEDHAMEED" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:muhammedbinhameed786@gmail.com" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Scroll Down Cue -->
+        <a href="#about" class="scroll-down-indicator" aria-label="Scroll to About">
+          <div class="mouse-icon">
+            <div class="wheel"></div>
+          </div>
+          <span>Scroll Down</span>
+        </a>
+      </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">who Me</h2>
-            <div class="about-grid">
-                <div class="about-image-container animate-on-scroll fade-in-left">
-                    <img src="IMG_3017.jpg" alt="Profile Picture" class="profile-pic">
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Get to know me</span>
+          <h2 class="section-title">About <span class="gradient-text">Muhammad</span></h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left: Profile Image with Modern Glowing Framing -->
+          <div class="about-visual-col">
+            <div class="profile-card-wrapper">
+              <div class="profile-glow-ring"></div>
+              <div class="profile-card">
+                <img src="IMG_3017.jpg" alt="Muhammad - Full Stack Developer" class="profile-image">
+                <div class="profile-overlay-info">
+                  <div class="overlay-badge">
+                    <i class="fas fa-code"></i>
+                    <span>Full Stack Developer</span>
+                  </div>
+                  <div class="overlay-meta">Kozhikode, Kerala • India</div>
                 </div>
-                <div class="about-text animate-on-scroll fade-in-right">
-                    <p>I am a passionate web developer with a knack for creating clean, efficient, and user-friendly websites. With a strong foundation in HTML, CSS, and modern frameworks, I enjoy bringing ideas to life on the web. I am always eager to learn new technologies and improve my craft.</p>
+              </div>
+              <div class="floating-badge badge-top">
+                <i class="fas fa-layer-group"></i>
+                <div>
+                  <strong>MERN</strong>
+                  <span>Stack Expert</span>
                 </div>
+              </div>
+              <div class="floating-badge badge-bottom">
+                <i class="fas fa-bolt"></i>
+                <div>
+                  <strong>High Performance</strong>
+                  <span>Clean Architecture</span>
+                </div>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card animate-on-scroll pop-in">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML5</h3>
-                </div>
-                <div class="skill-card animate-on-scroll pop-in">
-                    <i class="fab fa-css3-alt"></i>
-                    <h3>CSS3</h3>
-                </div>
-                <div class="skill-card animate-on-scroll pop-in">
-                    <i class="fab fa-js"></i>
-                    <h3>JavaScript</h3>
-                </div>
-                <div class="skill-card animate-on-scroll pop-in">
-                    <i class="fab fa-react"></i>
-                    <h3>React</h3>
-                </div>
-                <div class="skill-card animate-on-scroll pop-in">
-                    <i class="fab fa-node-js"></i>
-                    <h3>Node.js</h3>
+          <!-- Right: Bio & Key Value Pillars -->
+          <div class="about-content-col">
+            <h3 class="about-heading">
+              Building scalable products with a blend of <span class="highlight">modern engineering</span> and <span class="highlight">design precision</span>.
+            </h3>
+            <p class="about-text">
+              I am a dedicated developer focused on creating clean, intuitive, and responsive web applications. Having engineered full-stack architectures and modern client-facing platforms, I thrive at the intersection of powerful backends and visually captivating user interfaces.
+            </p>
+            <p class="about-text">
+              Whether building a weather-synchronized audio streaming platform, corporate business consulting ecosystems, or full-scale service booking marketplaces, I emphasize modular code, high performance, and human-centered design.
+            </p>
+
+            <div class="stats-row">
+              <div class="stat-card">
+                <span class="stat-number" data-target="15">0+</span>
+                <span class="stat-title">Completed Projects</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" data-target="100">0%</span>
+                <span class="stat-title">Client Dedication</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" data-target="24">0/7</span>
+                <span class="stat-title">Passionate Learning</span>
+              </div>
             </div>
-        </div>
-    </section>
 
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card animate-on-scroll pop-in">
-                    <img src="climaTune.png" alt="Project 1">
-                    <div class="project-info">
-                        <h3>Clima Tune</h3>
-                        <h6>On Going</h6>
-                        <p>A Customized Weather App.Fetch Location And Weather.Suggest Songs Also Customize Weather In Background</p>
-                    </div>
-                </div>
-                <div class="project-card animate-on-scroll pop-in">
-                    <img src="anjad.png" alt="Project 2">
-                    <div class="project-info">
-                        <h6>On Going</h6>
-                        <h3>website</h3>
-                        <p>A Botique Website.</p>
-                    </div>
-                </div>
-                <div class="project-card animate-on-scroll pop-in">
-                    <img src="image.png" alt="Project 3">
-                    <div class="project-info">
-                        <h3>on processing</h3>
-                        <p>Builid Something Huge.</p>
-                    </div>
-                </div>
+            <div class="about-action">
+              <a href="#contact" class="btn btn-primary">
+                <span>Hire Me</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="https://github.com/MUHAMMEDHAMEED" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                <i class="fab fa-github"></i>
+                <span>Explore Repos</span>
+              </a>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <form class="contact-form animate-on-scroll fade-in-up">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="cta-button">Send Message</button>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Technical Expertise</span>
+          <h2 class="section-title">Tools & <span class="gradient-text">Technologies</span></h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Skill Card 1: React.js -->
+          <div class="skill-card" data-tilt>
+            <div class="skill-icon-wrap react-color">
+              <i class="fab fa-react"></i>
+            </div>
+            <h3 class="skill-name">React.js</h3>
+            <p class="skill-desc">Component-driven architecture, hooks, state management & SPAs.</p>
+            <div class="skill-level-bar"><div class="bar-fill" style="width: 90%"></div></div>
+          </div>
+
+          <!-- Skill Card 2: Next.js -->
+          <div class="skill-card" data-tilt>
+            <div class="skill-icon-wrap next-color">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3 class="skill-name">Next.js</h3>
+            <p class="skill-desc">Server-Side Rendering, App Router, static generation & SEO mastery.</p>
+            <div class="skill-level-bar"><div class="bar-fill" style="width: 85%"></div></div>
+          </div>
+
+          <!-- Skill Card 3: Node.js -->
+          <div class="skill-card" data-tilt>
+            <div class="skill-icon-wrap node-color">
+              <i class="fab fa-node-js"></i>
+            </div>
+            <h3 class="skill-name">Node.js</h3>
+            <p class="skill-desc">Event-driven asynchronous backends, microservices & REST APIs.</p>
+            <div class="skill-level-bar"><div class="bar-fill" style="width: 88%"></div></div>
+          </div>
+
+          <!-- Skill Card 4: Express.js -->
+          <div class="skill-card" data-tilt>
+            <div class="skill-icon-wrap express-color">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3 class="skill-name">Express.js</h3>
+            <p class="skill-desc">Middleware pipelines, secure routing, authentication & error handling.</p>
+            <div class="skill-level-bar"><div class="bar-fill" style="width: 85%"></div></div>
+          </div>
+
+          <!-- Skill Card 5: MongoDB -->
+          <div class="skill-card" data-tilt>
+            <div class="skill-icon-wrap mongo-color">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 class="skill-name">MongoDB</h3>
+            <p class="skill-desc">NoSQL data modeling, aggregation pipelines & Mongoose ODM.</p>
+            <div class="skill-level-bar"><div class="bar-fill" style="width: 82%"></div></div>
+          </div>
+
+          <!-- Skill Card 6: JavaScript (ES6+) -->
+          <div class="skill-card" data-tilt>
+            <div class="skill-icon-wrap js-color">
+              <i class="fab fa-js-square"></i>
+            </div>
+            <h3 class="skill-name">JavaScript (ES6+)</h3>
+            <p class="skill-desc">Asynchronous programming, closures, DOM manipulation & modern syntax.</p>
+            <div class="skill-level-bar"><div class="bar-fill" style="width: 92%"></div></div>
+          </div>
+
+          <!-- Skill Card 7: HTML5 & CSS3 -->
+          <div class="skill-card" data-tilt>
+            <div class="skill-icon-wrap html-color">
+              <i class="fab fa-html5"></i>
+            </div>
+            <h3 class="skill-name">HTML5 & CSS3</h3>
+            <p class="skill-desc">Semantic HTML, Flexbox, CSS Grid, custom keyframes & responsive layouts.</p>
+            <div class="skill-level-bar"><div class="bar-fill" style="width: 95%"></div></div>
+          </div>
+
+          <!-- Skill Card 8: Git & GitHub -->
+          <div class="skill-card" data-tilt>
+            <div class="skill-icon-wrap git-color">
+              <i class="fab fa-git-alt"></i>
+            </div>
+            <h3 class="skill-name">Git & Version Control</h3>
+            <p class="skill-desc">Branching workflows, collaboration, open-source repos & CI/CD deployment.</p>
+            <div class="skill-level-bar"><div class="bar-fill" style="width: 88%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Featured Work</span>
+          <h2 class="section-title">Selected <span class="gradient-text">Projects</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-description">
+            Explore a curated selection of live production applications, full-stack ecosystems, and tailored client platforms.
+          </p>
+        </div>
+
+        <div class="projects-container">
+
+          <!-- PROJECT 1: ClimaTune -->
+          <article class="project-showcase-card" data-tilt>
+            <div class="project-media-col">
+              <div class="project-img-frame">
+                <img src="climaTune.png" alt="ClimaTune - Weather Synchronized Music Experience" class="project-img" loading="lazy">
+                <div class="project-glass-badge">
+                  <i class="fas fa-cloud-sun-rain"></i>
+                  <span>Weather-Synced Music</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info-col">
+              <div class="project-tag-list">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">OpenWeather API</span>
+                <span class="tech-tag">Web Audio</span>
+              </div>
+              <h3 class="project-title">ClimaTune</h3>
+              <p class="project-summary">
+                An innovative weather-synchronized music platform that detects live meteorological conditions and algorithmically curates mood-matched auditory experiences for listeners worldwide.
+              </p>
+              <ul class="project-feature-list">
+                <li><i class="fas fa-check-circle"></i> Real-time weather geolocation & atmospheric analysis</li>
+                <li><i class="fas fa-check-circle"></i> Adaptive sonic player with custom ambient visuals</li>
+                <li><i class="fas fa-check-circle"></i> Ultra-responsive, lightweight modern frontend</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://climatune.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>Live Demo</span>
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://github.com/MUHAMMEDHAMEED" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <i class="fab fa-github"></i>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: HenterFin -->
+          <article class="project-showcase-card reverse" data-tilt>
+            <div class="project-media-col">
+              <div class="project-img-frame">
+                <img src="henterfin.png" alt="HenterFin - Corporate & Financial Advisory Portal" class="project-img" loading="lazy">
+                <div class="project-glass-badge">
+                  <i class="fas fa-chart-line"></i>
+                  <span>Corporate Finance</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info-col">
+              <div class="project-tag-list">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Responsive UI</span>
+              </div>
+              <h3 class="project-title">HenterFin</h3>
+              <p class="project-summary">
+                A modern business consultancy and financial advisory web portal built to streamline corporate registration, GST compliance, tax filings, and enterprise advisory services.
+              </p>
+              <ul class="project-feature-list">
+                <li><i class="fas fa-check-circle"></i> Intuitive service consultation & inquiry pathways</li>
+                <li><i class="fas fa-check-circle"></i> Elegant corporate branding with dark-mode accents</li>
+                <li><i class="fas fa-check-circle"></i> Optimized page performance with fast mobile access</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://henterfin.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>Live Demo</span>
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://github.com/MUHAMMEDHAMEED" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <i class="fab fa-github"></i>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: Home Service Connect -->
+          <article class="project-showcase-card" data-tilt>
+            <div class="project-media-col">
+              <div class="project-img-frame">
+                <img src="homeservice.png" alt="Home Service Connect - MERN On-Demand Marketplace" class="project-img" loading="lazy">
+                <div class="project-glass-badge">
+                  <i class="fas fa-tools"></i>
+                  <span>Full-Stack MERN</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info-col">
+              <div class="project-tag-list">
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Express.js</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+              </div>
+              <h3 class="project-title">Home Service Connect</h3>
+              <p class="project-summary">
+                A robust full-stack MERN marketplace platform connecting households with trusted, background-checked neighborhood professionals for electrical, plumbing, HVAC, and maintenance services.
+              </p>
+              <ul class="project-feature-list">
+                <li><i class="fas fa-check-circle"></i> Service discovery with verified provider ratings</li>
+                <li><i class="fas fa-check-circle"></i> Dynamic booking system with real-time status updates</li>
+                <li><i class="fas fa-check-circle"></i> Secure authentication and role-based dashboards</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://99nk8pbf-4174.inc1.devtunnels.ms/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>Live Demo</span>
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://github.com/MUHAMMEDHAMEED" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <i class="fab fa-github"></i>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: Kuttiady Velichenna -->
+          <article class="project-showcase-card reverse" data-tilt>
+            <div class="project-media-col">
+              <div class="project-img-frame">
+                <img src="coconutOil.png" alt="Kuttiady Velichenna - Pure Cold-Pressed Coconut Oil Showcase" class="project-img" loading="lazy">
+                <div class="project-glass-badge">
+                  <i class="fas fa-leaf"></i>
+                  <span>E-Commerce Showcase</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info-col">
+              <div class="project-tag-list">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">CSS Grid</span>
+                <span class="tech-tag">Responsive</span>
+                <span class="tech-tag">Branding</span>
+              </div>
+              <h3 class="project-title">Kuttiady Velichenna</h3>
+              <p class="project-summary">
+                A tailored digital showcase and ordering platform for authentic, cold-pressed traditional coconut oil, blending rich visual product storytelling with seamless customer conversion.
+              </p>
+              <ul class="project-feature-list">
+                <li><i class="fas fa-check-circle"></i> Engaging visual journey highlighting pure production methods</li>
+                <li><i class="fas fa-check-circle"></i> High-conversion product showcase for wholesale & retail</li>
+                <li><i class="fas fa-check-circle"></i> Fully responsive design with frictionless contact flows</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://kuttiadyvelichenna.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>Live Demo</span>
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://github.com/MUHAMMEDHAMEED" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <i class="fab fa-github"></i>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="github-cta-banner">
+          <div class="banner-content">
+            <h3>Interested in seeing more code?</h3>
+            <p>Check out my open-source repositories, components, and experiments on GitHub.</p>
+          </div>
+          <a href="https://github.com/MUHAMMEDHAMEED" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <i class="fab fa-github"></i>
+            <span>Visit @MUHAMMEDHAMEED</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Get In Touch</span>
+          <h2 class="section-title">Let's Build Something <span class="gradient-text">Great</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-description">
+            Have a project in mind, an opportunity to discuss, or just want to say hi? Send me a message!
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Contact Details -->
+          <div class="contact-info-col">
+            <div class="contact-info-card">
+              <div class="info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-details">
+                <h4>Location</h4>
+                <p>Kozhikode, Kerala, India</p>
+                <span>Available remotely worldwide</span>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="info-details">
+                <h4>Email</h4>
+                <a href="mailto:muhammedbinhameed786@gmail.com">muhammedbinhameed786@gmail.com</a>
+                <span>Quick response guaranteed</span>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="info-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="info-details">
+                <h4>GitHub</h4>
+                <a href="https://github.com/MUHAMMEDHAMEED" target="_blank" rel="noopener noreferrer">github.com/MUHAMMEDHAMEED</a>
+                <span>Explore public repos & stars</span>
+              </div>
+            </div>
+
+            <div class="availability-badge">
+              <div class="pulse-dot"></div>
+              <span>Currently accepting freelance projects & full-time roles</span>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Contact Form -->
+          <div class="contact-form-col">
+            <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" onsubmit="event.preventDefault(); handleFormSubmit();">
+              <input type="hidden" name="form-name" value="contact">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_subject" value="New Portfolio Inquiry via muhammed.dev">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Your Email</label>
+                  <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Project Inquiry / Job Opportunity" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, timeline, and goals..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block submit-btn" id="submitBtn">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+              <div class="form-feedback" id="formFeedback"></div>
             </form>
+          </div>
         </div>
+      </div>
     </section>
+  </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 MyPortfolio. Designed by Muhammed.</p>
-        <div class="social-links">
-            <a href="https://github.com/MUHAMMEDHAMEED"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/muhammed-p-5b918a291/"><i class="fab fa-linkedin"></i></a>
-            <a href="https://discordstatus.com/"><i class="fab fa-discord"></i></a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#hero" class="brand-logo">
+          <span class="logo-symbol">&lt;/&gt;</span>
+          <span class="logo-text">muhammad<span class="dot">.</span></span>
+        </a>
+        <p>Crafting responsive, high-performance web applications with passion.</p>
+      </div>
 
-        </div>
-    </footer>
+      <div class="footer-nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
 
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, { threshold: 0.1 });
+      <div class="footer-socials">
+        <a href="https://github.com/MUHAMMEDHAMEED" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:muhammedbinhameed786@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Muhammad. All rights reserved. Designed & Engineered with modern standards.</p>
+      </div>
+    </div>
+  </footer>
 
-        document.querySelectorAll('.animate-on-scroll').forEach((element) => {
-            observer.observe(element);
-        });
-    </script>
+  <!-- GSAP & ScrollTrigger from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
 </body>
 </html>
